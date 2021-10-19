@@ -7,57 +7,94 @@ public with sharing class Homework
     public Integer total(List<Integer> values)
     {
         Integer result=0;
-        for (Integer idx=0; idx<values.length; idx++)
+        for (Integer idx=0; idx<values.size(); idx++)
         {
             result+=values[idx];
         }
-
         return result;
+      
     }
 
     // 1. Take a List of integers and return the largest value using a loop
     public Integer maxInListLoop(List<Integer> values)
     {
-
+        List<Integer> ascendingOrder= values.sort();
+        Integer largestValue = ascendingOrder[0];
+        for (Integer i=0; i <ascendingOrder.size(); i++)
+        {
+            if (ascendingOrder[i] > largestValue) 
+            {
+                largestValue = ascendingOrder[i];
+            }
+            
+            
+        }
+        return largestValue;
     }
 
     // 2. Take a List of integers and return the largest value without using a loop.
     public Integer maxInList(List<Integer> values)
     {
-
+        values.sort();
+        return values[values.size()-1];
     }
 
     // 3. Take a list of Integers and reverse the order
     public List<Integer> reverse(List<Integer> values)
     {
-
+        List<Integer> reverseOrderedIntegers = new List<Integer>();
+        for(Integer i = values.size()-1; i >=0 ;i--)
+        
+        {
+            reverseOrderedIntegers.add(values[i]);
+        } 
+        return reverseOrderedIntegers;
     }
 
     // 4. Take a list of Strings and extract every third element into a new list that is returned. 
     //    Extra credit for handling that the list passed in may not be exactly divisible by 3.
     public List<String> everyThird(List<String> originals)
     {
-
+        List<String> thirdElementList = new List<String>();
+        if (originals.size()>=3) 
+        {
+            for (Integer i = 2; i < originals.size(); i = i+3)
+            {
+                thirdElementList.add(originals[i]);
+            }
+            
+        }
+        return thirdElementList;
+        
     }
 
     // 5. Take a String and return the number of unique characters in the String.
     public Integer uniqueCharacters(String value)
     {
-
+        //Integer numberOfUniqueCharacters = 0;
+        Set<String> uniqueValuesSet= value.getChars();
+        Integer numberOfUniqueCharacters = uniqueValuesSet.size();
+        return numberOfUniqueCharacters;
     }
 
     // 6. Take a String and return a map of characters and their position in the String. 
     //    Note that characters may occur more than once and you should identify the 
     //    position of all occurrences.
     public Map<String, List<Integer>> getPositionsByCharacter(String value)
-    {
+    {   
+        //Set<String> keys = value.getChars() ;
+       
+        //for()
+        // value = 'The Sun is Shining like a Star';
+        // T = 1, 5;
+        //****Need some assistance on this Please 
 
     }
 
     // 7. Take a map of type Map<Integer, String> and return a map of type Map<String, Integer> with the keys and values swapped
     public Map<String, Integer> swapOver(Map<Integer, String> inMap)
     {
-
+        //****Need some assistance on this Please 
     }
 
     // 8. Take a List of Strings representing playing cards - 
@@ -77,7 +114,7 @@ public with sharing class Homework
     //          the returned list would be 8,9,10,1,2,3,4,5,6,7
     public List<Integer> rotateFinalThree(List<Integer> values)
     {
-
+        //****Need some assistance on this Please 
     }
 
     // 10. Take a String containing a number of words separated by whitespace and remove any duplicates.
@@ -85,6 +122,6 @@ public with sharing class Homework
     //  You should be able to achieve this in around 6 lines without any loops.
     public String uniqueWords(String original)
     {
-
+        //****Need some assistance on this Please 
     }
 }
